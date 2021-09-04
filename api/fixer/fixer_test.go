@@ -21,3 +21,10 @@ func TestParseFixerResponse(t *testing.T) {
 	assert.Equal(t, "EUR", response.Base)
 	assert.Equal(t, 1.18835, response.Rates["USD"])
 }
+
+func TestParseFailureResponse(t *testing.T) {
+
+	buf, err := ioutil.ReadFile("../../docs/not-existing-file")
+	assert.Nil(t, buf)
+	assert.NotNil(t, err)
+}
