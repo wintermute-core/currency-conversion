@@ -7,7 +7,7 @@ import (
 )
 
 // Projects - currently available projects
-var Projects = make(map[string]Project)
+var projects = make(map[string]Project)
 
 type Project struct {
 	ApiKey       string
@@ -24,13 +24,13 @@ func NewProject() *Project {
 		CreationTime: time.Now(),
 		ApiKey:       fmt.Sprintf("%v", u),
 	}
-	Projects[project.ApiKey] = project
+	projects[project.ApiKey] = project
 
 	return &project
 }
 
 // IsValidApiKey - check if API key is valid
 func IsValidApiKey(apiKey string) bool {
-	_, found := Projects[apiKey]
+	_, found := projects[apiKey]
 	return found
 }

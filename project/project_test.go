@@ -7,13 +7,13 @@ import (
 
 func TestProjectCreation(t *testing.T) {
 
-	assert.Empty(t, Projects)
+	assert.Empty(t, projects)
 	project := NewProject()
 	assert.NotNil(t, project)
 	assert.NotEmpty(t, project.ApiKey)
 	assert.NotEmpty(t, project.CreationTime)
 
-	assert.NotEmpty(t, Projects)
+	assert.NotEmpty(t, projects)
 }
 
 func TestProjectAccessByApiKey(t *testing.T) {
