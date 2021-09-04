@@ -17,3 +17,4 @@ clean:
 
 container:
 	docker build . -t currency-conversion:$(shell git rev-parse --short HEAD)
+	docker tag currency-conversion:$(shell git rev-parse --short HEAD) currency-conversion:latest
