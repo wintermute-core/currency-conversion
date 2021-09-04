@@ -24,7 +24,7 @@ func TestParseFixerResponse(t *testing.T) {
 
 func TestParseFailureResponse(t *testing.T) {
 
-	buf, err := ioutil.ReadFile("../../docs/not-existing-file")
+	buf, err := parseResponse([]byte("random text"))
 	assert.Nil(t, buf)
 	assert.NotNil(t, err)
 }
