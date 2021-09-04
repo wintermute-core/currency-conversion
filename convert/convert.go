@@ -68,6 +68,20 @@ func validateCurrency(currency string) error {
 	return nil
 }
 
+// LoadRates - load exchange rates
+func LoadRates(newBaseCurrency string, newRates map[string]float64) {
+	if env.IsDefined("TRACE") {
+		log.Printf("Enter LoadRates: %v, %v\n", newBaseCurrency, newRates)
+		defer log.Printf("Exit LoadRates: %v, %v\n", newBaseCurrency, newRates)
+	}
+	filteredRates := map[string]float64{}
+	for key, _ := range allowedCurrencies {
+		filteredRates[key] = newRates[key]
+	}
+	exchangeRates = filteredRates
+	baseCurrency = newBaseCurrency
+}
+
 type ExchangeCurrencyEqual struct{}
 
 func (m ExchangeCurrencyEqual) Error() string {

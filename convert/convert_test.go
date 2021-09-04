@@ -7,8 +7,10 @@ import (
 
 func TestCurrencyConversion(t *testing.T) {
 
-	exchangeRates["USD"] = 1.187905
-	exchangeRates["EUR"] = 1
+	LoadRates("EUR", map[string]float64{
+		"USD": 1.187905,
+		"EUR": 1,
+	})
 
 	amount, err := exchange(1, "EUR", "USD")
 	assert.NoError(t, err)
