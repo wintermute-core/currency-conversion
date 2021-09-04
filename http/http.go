@@ -7,12 +7,15 @@ import (
 	"net/http"
 )
 
-func Server() {
+func Server() error {
 	listenPort := env.Env("HTTP_PORT", "8080")
 	log.Printf("Starting HTTP server on %v", listenPort)
 	r := router()
-	http.ListenAndServe(":"+listenPort, r)
-
+	err := http.ListenAndServe(":"+listenPort, r)
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func router() *mux.Router {
