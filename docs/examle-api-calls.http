@@ -6,4 +6,43 @@ POST http://localhost:8080/api/v1/public/project/new
 
 ###
 
+# Exchange EUR to USD, API key from project creation
+POST http://localhost:8080/api/v1/private/exchange
+Content-Type: application/json
+X-API-KEY: 2bbd1ab6-c60a-4a0d-6e8f-990e38acd598
+
+{
+  "amount": 2,
+  "from": "EUR",
+  "to": "USD"
+}
+
+###
+
+# Exchange USD to EUR
+POST http://localhost:8080/api/v1/private/exchange
+Content-Type: application/json
+X-API-KEY: 2bbd1ab6-c60a-4a0d-6e8f-990e38acd598
+
+{
+  "amount": 2,
+  "from": "USD",
+  "to": "EUR"
+}
+
+###
+
+# Exchange with invalid currencies
+POST http://localhost:8080/api/v1/private/exchange
+Content-Type: application/json
+X-API-KEY: 2bbd1ab6-c60a-4a0d-6e8f-990e38acd598
+
+{
+  "amount": 2,
+  "from": "USD",
+  "to": "BTC"
+}
+
+###
+
 

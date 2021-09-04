@@ -19,7 +19,7 @@ var baseCurrency = "EUR"
 // exchangeRates - available exchange rates
 var exchangeRates = map[string]float64{}
 
-func exchange(amount float64, from string, to string) (float64, error) {
+func Exchange(amount float64, from string, to string) (float64, error) {
 	if env.IsDefined("TRACE") {
 		log.Printf("Enter exchange: %v, %v, %v \n", amount, from, to)
 		defer log.Printf("Exit exchange: %v, %v, %v \n", amount, from, to)
@@ -43,7 +43,7 @@ func exchange(amount float64, from string, to string) (float64, error) {
 	} else {
 		value = amount * (1 / exchangeRates[from])
 	}
-	value, err := strconv.ParseFloat(fmt.Sprintf("%.4f", value), 10)
+	value, err := strconv.ParseFloat(fmt.Sprintf("%.2f", value), 10)
 	if err != nil {
 		return 0, err
 	}
