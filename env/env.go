@@ -15,5 +15,5 @@ func Env(name string, defaultValue string) string {
 // IsDefined - check if environment variable is defined
 func IsDefined(name string) bool {
 	v := os.Getenv(name)
-	return v == ""
+	return v != ""
 }

@@ -3,6 +3,7 @@ package fixer
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/denis256/currency-conversion/env"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -24,7 +25,10 @@ type Response struct {
 }
 
 func (fixer Request) FetchExchangeRate() (*Response, error) {
-
+	if env.IsDefined("TRACE") {
+		log.Println("Enter FetchExchangeRate")
+		defer log.Println("Exit FetchExchangeRate")
+	}
 	url := fmt.Sprintf("http://data.fixer.io/api/latest?access_key=%s&format=1", fixer.ApiKey)
 	spaceClient := http.Client{
 		Timeout: fixer.Timeout,

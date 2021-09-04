@@ -2,6 +2,8 @@ package convert
 
 import (
 	"fmt"
+	"github.com/denis256/currency-conversion/env"
+	"log"
 	"strconv"
 )
 
@@ -18,6 +20,10 @@ var baseCurrency = "EUR"
 var exchangeRates = map[string]float64{}
 
 func exchange(amount float64, from string, to string) (float64, error) {
+	if env.IsDefined("TRACE") {
+		log.Printf("Enter exchange: %v, %v, %v \n", amount, from, to)
+		defer log.Printf("Exit exchange: %v, %v, %v \n", amount, from, to)
+	}
 
 	if err := validateCurrency(from); err != nil {
 		return 0, err
