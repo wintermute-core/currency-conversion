@@ -2,7 +2,7 @@ package convert
 
 import (
 	"fmt"
-	"github.com/denis256/currency-conversion/env"
+	"github.com/wintermute-core/currency-conversion/env"
 	"log"
 	"strconv"
 )

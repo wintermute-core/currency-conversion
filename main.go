@@ -1,12 +1,13 @@
 package main
 
 import (
-	"github.com/denis256/currency-conversion/env"
-	"github.com/denis256/currency-conversion/http"
-	"github.com/denis256/currency-conversion/sync"
-	"github.com/jasonlvhit/gocron"
 	"log"
 	"strconv"
+
+	"github.com/jasonlvhit/gocron"
+	"github.com/wintermute-core/currency-conversion/env"
+	"github.com/wintermute-core/currency-conversion/http"
+	"github.com/wintermute-core/currency-conversion/sync"
 )
 
 func main() {

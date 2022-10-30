@@ -2,10 +2,11 @@ package project
 
 import (
 	"fmt"
-	"github.com/denis256/currency-conversion/env"
-	uuid "github.com/nu7hatch/gouuid"
 	"log"
 	"time"
+
+	uuid "github.com/nu7hatch/gouuid"
+	"github.com/wintermute-core/currency-conversion/env"
 )
 
 // Projects - currently available projects

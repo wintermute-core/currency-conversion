@@ -3,7 +3,7 @@ package fixer
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/denis256/currency-conversion/env"
+	"github.com/wintermute-core/currency-conversion/env"
 	"io/ioutil"
 	"log"
 	"net/http"

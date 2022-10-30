@@ -1,11 +1,12 @@
 package sync
 
 import (
-	"github.com/denis256/currency-conversion/api/fixer"
-	"github.com/denis256/currency-conversion/convert"
-	"github.com/denis256/currency-conversion/env"
 	"log"
 	"time"
+
+	"github.com/wintermute-core/currency-conversion/api/fixer"
+	"github.com/wintermute-core/currency-conversion/convert"
+	"github.com/wintermute-core/currency-conversion/env"
 )
 
 const FixerApiKeyName = "FIXER_API_KEY"

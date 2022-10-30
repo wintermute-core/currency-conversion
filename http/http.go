@@ -2,9 +2,9 @@ package http
 
 import (
 	"encoding/json"
-	"github.com/denis256/currency-conversion/convert"
-	"github.com/denis256/currency-conversion/env"
-	"github.com/denis256/currency-conversion/project"
+	"github.com/wintermute-core/currency-conversion/convert"
+	"github.com/wintermute-core/currency-conversion/env"
+	"github.com/wintermute-core/currency-conversion/project"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
