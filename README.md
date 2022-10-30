@@ -52,4 +52,4 @@ FIXER_API_KEY=<api-key> docker-compose up -d
 
 # License
 
-Only for reference
+MIT 
